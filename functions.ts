@@ -78,6 +78,51 @@ const client:IUserClient={
     Userphone:"+212 65454445",
     Email:"test@test.com",
 }
+//GENERICS
+interface IAuthor{
+    id:number,
+    username:string
+}
+interface ICategory{
+    id:number,
+    title:string
 
+}
+interface ipOST{
+    ID:number,
+    title:string,
+    desc:string,
+    extra :IAuthor[]|ICategory[]
+}
 
+interface IPOstbetter<T>{
+    ID:number,
+    title:string,
+    desc:string,
+    extra :T[]
+}
+const testMe:IPOstbetter<String>={
+    ID:99,
+    title:"testbetter",
+    desc:"This here",
+    extra :["obe","Two", "why not Five"]
+}
+const testMe2:IPOstbetter<IAuthor>={
+    ID:99,
+    title:"testbetter",
+    desc:"This here",
+    extra :[{id:9999, username:"string"}]
+}
 
+interface IPOstevenbetter<T extends object>{
+    ID:number,
+    title:string,
+    desc:string,
+    extra :T[]
+}
+const testMe3:IPOstevenbetter<IAuthor>={
+    ID:99,
+    title:"testbetter",
+    desc:"This here",
+    extra :[{id:9999, username:"string"}]
+}
