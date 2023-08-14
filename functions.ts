@@ -55,3 +55,29 @@ const PlanWithTheme:UserType2={
     theme:"Dark"
 }
 
+//INTERFACES
+ interface IUserClient{
+    Username:string, 
+    Userage:number,
+    Userphone?:string,
+    Email:string
+ }
+interface IEmployee extends IUserClient{
+    employeeId:number
+}
+const emp:IEmployee={
+    Username:"YAssine", 
+    Userage:35,
+    Userphone:"+212 65456545",
+    Email:"test@test.com",
+    employeeId:659800
+}
+const client:IUserClient={
+    Username:"Testname", 
+    Userage:35,
+    Userphone:"+212 65454445",
+    Email:"test@test.com",
+}
+
+
+
